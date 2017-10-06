@@ -1,0 +1,30 @@
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-buttons left="">
+      <button ion-button="" icon-only="" menuToggle="">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      UMnify
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let key of this.cacheIndex">
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-content>
+      {{(this.cache.get(key)).content}}
+    </ion-card-content>
+    <img src="{{ this.imageFolder + '/preview/' + this.cache.get(key).imageFile}}">
+  </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,25 +1,32 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
-import {NewsPage} from "../feed/news/newspage";
-import {NotificationPage} from "../feed/notification/notificationpage";
-import {AnnouncementPage} from "../feed/annoucement/announcementpage";
-import {BlogPage} from "../feed/blog/blogpage";
+import {NotificationFeedPage} from "../feed/notification/notification-feed";
+import {AnnouncementFeedGuestPage} from "../feed/annoucement/announcement-feed-guest";
+import {AuthenticationService} from "../../app/providers/authenticationservice";
+import {NewsFactory} from "../../components/news-factory";
+import {BlogFactory} from "../../components/blog-factory";
+import {NewsFeedGuestPage} from "../feed/news/news-feed-guest";
+import {BlogFeedGuestPage} from "../feed/blog/blog-feed-guest";
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  //tab1Root = HomePage;
-  tab1Root = NewsPage;
-  tab2Root = BlogPage;
-  tab3Root = AnnouncementPage;
-  tab4Root = NotificationPage;
 
-  constructor() {
+  private tab1Root: any;
+  private tab2Root: any;
+  private tab3Root: any;
+  private tab4Root: any;
 
+  constructor(private auth: AuthenticationService) {
+
+    let type: number = this.auth.user.type;
+
+
+    this.tab1Root = NewsFactory.getNewsFeedPageFromUserType(type);
+    this.tab2Root = BlogFactory.getBlogFeedPageFromUserType(type);;
+    this.tab3Root = AnnouncementFeedGuestPage;
+    this.tab4Root = NotificationFeedPage;
   }
 }

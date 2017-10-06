@@ -4,12 +4,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import {PostDataService} from "./providers/postdataservice";
+import {LoginPage} from "../pages/login/login";
+import {AuthenticationService} from "./providers/authenticationservice";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [PostDataService, AuthenticationService]
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  //rootPage:any = TabsPage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
