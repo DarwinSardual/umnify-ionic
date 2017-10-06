@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {IonicPage, NavController} from 'ionic-angular';
 
 import {News} from "../../../app/model/news";
 import {PostDataService} from "../../../app/providers/postdataservice";
@@ -8,6 +8,7 @@ import {FeedAction} from "../feedaction";
 import {ServiceAddress} from "../../../app/constants/serviceaddress";
 import {AuthenticationKeys} from "../../../app/constants/authenticationkeys";
 
+@IonicPage()
 @Component({
   selector: 'page-news-feed-guest',
   templateUrl: 'news-feed-guest.html'

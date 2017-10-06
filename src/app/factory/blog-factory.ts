@@ -1,12 +1,12 @@
-import {AuthenticationCodes} from "../app/constants/authenticationcodes";
-import {BlogAdminPage} from "../pages/blog/blog-admin";
-import {BlogGuestPage} from "../pages/blog/blog-guest";
-import {BlogFeedGuestPage} from "../pages/feed/blog/blog-feed-guest";
-import {BlogFeedAdminPage} from "../pages/feed/blog/blog-feed-admin";
+import {AuthenticationCodes} from "../constants/authenticationcodes";
+import {BlogAdminPage} from "../../pages/blog/blog-admin";
+import {BlogGuestPage} from "../../pages/blog/blog-guest";
+import {BlogFeedGuestPage} from "../../pages/feed/blog/blog-feed-guest";
+import {BlogFeedAdminPage} from "../../pages/feed/blog/blog-feed-admin";
 
 export class BlogFactory{
 
-  static getBlogFeedPageFromUserType(type: number): any{
+  static getFeedPageFromUserType(type: number): any{
 
     let page: any;
 
@@ -14,11 +14,11 @@ export class BlogFactory{
 
       case AuthenticationCodes.SUPER_ADMIN:
       case AuthenticationCodes.ADMIN:
-        page = BlogFeedAdminPage;
+        page = 'BlogFeedAdminPage';
         break;
       case AuthenticationCodes. NORMAL:
       case AuthenticationCodes.GUEST:
-        page = BlogFeedGuestPage;
+        page = 'BlogFeedGuestPage';
         break;
       default:
         page = null;
@@ -28,7 +28,7 @@ export class BlogFactory{
     return page;
   }
 
-  static getBlogPageFromUserType(type: number): any{
+  static getPageFromUserType(type: number): any{
 
     let page: any;
 

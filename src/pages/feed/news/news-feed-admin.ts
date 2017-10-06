@@ -1,9 +1,10 @@
-import {NavController} from "ionic-angular";
+import {IonicPage, NavController} from "ionic-angular";
 import {PostDataService} from "../../../app/providers/postdataservice";
 import {NewsFeedGuestPage} from "./news-feed-guest";
 import {Component} from "@angular/core";
 import {AuthenticationService} from "../../../app/providers/authenticationservice";
 
+@IonicPage()
 @Component({
   selector: 'page-news-feed-admin',
   templateUrl: 'news-feed-admin.html'

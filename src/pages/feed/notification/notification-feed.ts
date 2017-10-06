@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {IonicPage, NavController} from 'ionic-angular';
 import {PostDataService} from "../../../app/providers/postdataservice";
 import {ServiceAddress} from "../../../app/constants/serviceaddress";
 import {Notification} from "../../../app/model/notification";
@@ -7,6 +7,7 @@ import * as LruCache from "lru-cache";
 import {FeedAction} from "../feedaction";
 import {AuthenticationKeys} from "../../../app/constants/authenticationkeys";
 
+@IonicPage()
 @Component({
   selector: 'page-notification-feed',
   templateUrl: 'notification-feed.html'

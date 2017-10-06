@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {IonicPage, NavController} from 'ionic-angular';
 import {ServiceAddress} from "../../../app/constants/serviceaddress";
 import * as LruCache from "lru-cache";
 import {PostDataService} from "../../../app/providers/postdataservice";
@@ -8,6 +8,7 @@ import {Blog} from "../../../app/model/blog";
 import {AuthenticationKeys} from "../../../app/constants/authenticationkeys";
 import {BlogGuestPage} from "../../blog/blog-guest";
 
+@IonicPage()
 @Component({
   selector: 'page-blog-feed-guest',
   templateUrl: 'blog-feed-guest.html',
@@ -100,7 +101,7 @@ export class BlogFeedGuestPage {
 
   viewBlog(key: string){
 
-    this.navCtrl.push(BlogGuestPage, {key});
+    this.navCtrl.push('BlogGuestPage', {key});
   }
 
   /* FEED MANAGER METHODS */

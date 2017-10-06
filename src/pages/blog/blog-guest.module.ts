@@ -9,5 +9,8 @@ import {BlogGuestPage} from './blog-guest';
   imports: [
     IonicPageModule.forChild(BlogGuestPage),
   ],
+  exports:[
+    BlogGuestPage
+  ]
 })
-export class BlogPageModule {}
+export class BlogGuestPageModule {}

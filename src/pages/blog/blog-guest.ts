@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Blog} from "../../app/model/blog";
 import {PostDataService} from "../../app/providers/postdataservice";
 import {AuthenticationKeys} from "../../app/constants/authenticationkeys";
 import {BlogFeedGuestPage} from "../feed/blog/blog-feed-guest";
 
+@IonicPage()
 @Component({
   selector: 'page-blog-guest',
   templateUrl: 'blog-guest.html',

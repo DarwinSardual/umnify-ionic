@@ -1,16 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
 import {AuthenticationService} from "../../app/providers/authenticationservice";
 import {AuthenticationCodes} from "../../app/constants/authenticationcodes";
 import {TabsPage} from "../tabs/tabs";
 import {User} from "../../app/model/user";
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -46,7 +39,7 @@ export class LoginPage {
         let user: User = new User(userData.id, userData.password, userData.type);
         this.auth.user = user;
 
-        this.navCtrl.push(TabsPage);
+        this.navCtrl.push('TabsPage');
 
       }else if(code == AuthenticationCodes.INVALID_USER_ID_PASSWORD){
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {IonicPage, NavController} from 'ionic-angular';
 import * as LruCache from "lru-cache";
 import {ServiceAddress} from "../../../app/constants/serviceaddress";
 import {PostDataService} from "../../../app/providers/postdataservice";
@@ -7,6 +7,7 @@ import {FeedAction} from "../feedaction";
 import {Announcement} from "../../../app/model/announcement";
 import {AuthenticationKeys} from "../../../app/constants/authenticationkeys";
 
+@IonicPage()
 @Component({
   selector: 'page-announcement-feed-guest',
   templateUrl: 'announcement-feed-guest.html'
@@ -26,7 +27,7 @@ export class AnnouncementFeedGuestPage {
   private cacheIndex: string[];
   private fetchDataBody: any;
 
-  constructor(public navCtrl: NavController, private postDataService: PostDataService) {
+  constructor(public navCtrl: NavController, protected postDataService: PostDataService) {
     this.cache = new LruCache();
     this.cacheIndex = [];
 

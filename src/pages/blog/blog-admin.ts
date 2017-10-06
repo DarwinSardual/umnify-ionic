@@ -1,9 +1,10 @@
 import {Component} from "@angular/core";
 import {BlogGuestPage} from "./blog-guest";
-import {NavController, NavParams} from "ionic-angular";
+import {IonicPage, NavController, NavParams} from "ionic-angular";
 import {PostDataService} from "../../app/providers/postdataservice";
 import {AuthenticationService} from "../../app/providers/authenticationservice";
 
+@IonicPage()
 @Component({
   selector: 'page-blog-admin',
   templateUrl: 'blog-admin.html',
@@ -16,5 +17,6 @@ export class BlogAdminPage extends BlogGuestPage{
     super(navCtrl, postDataService,  navParams);
 
   }
+
 
 }
