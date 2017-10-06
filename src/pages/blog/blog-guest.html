@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{[this.blog?.heading]}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+    <img src="{{this.getImageFolder()}}/preview/{{this.blog?.imageFile}}">
+    <p>
+      {{[this.blog?.content]}}
+    </p>
+</ion-content>
