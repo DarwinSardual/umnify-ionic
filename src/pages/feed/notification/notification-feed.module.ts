@@ -13,4 +13,4 @@ import {NotificationFeedPage} from "./notification-feed";
     NotificationFeedPage
   ]
 })
-export class NewsFeedGuestModule {}
+export class NotificationFeedModule {}

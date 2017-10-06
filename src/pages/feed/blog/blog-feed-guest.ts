@@ -101,7 +101,7 @@ export class BlogFeedGuestPage {
 
   viewBlog(key: string){
 
-    this.navCtrl.push('BlogGuestPage', {key});
+    this.navCtrl.push('BlogGuestPage', {key: key});
   }
 
   /* FEED MANAGER METHODS */

@@ -6,6 +6,8 @@ import {Notification} from "../../../app/model/notification";
 import * as LruCache from "lru-cache";
 import {FeedAction} from "../feedaction";
 import {AuthenticationKeys} from "../../../app/constants/authenticationkeys";
+import {AuthenticationService} from "../../../app/providers/authenticationservice";
+import {BlogFactory} from "../../../app/factory/blog-factory";
 
 @IonicPage()
 @Component({
@@ -22,7 +24,7 @@ export class NotificationFeedPage {
   private cacheIndex: string[];
   private fetchDataBody: any;
 
-  constructor(public navCtrl: NavController, private postDataService: PostDataService) {
+  constructor(public navCtrl: NavController, private postDataService: PostDataService, private auth: AuthenticationService) {
 
     this.cache = new LruCache();
     this.cacheIndex = [];
@@ -87,6 +89,18 @@ export class NotificationFeedPage {
       json.published_date, json.type, json.firstname, json.lastname, json.author_image);
 
     return notification;
+  }
+
+  viewNotification(key: string){
+
+    let notification: Notification = this.cache.get(key);
+    let userType = this.auth.user.type;
+    let refId: number = notification.refId;
+
+    if(notification.type === 'blog'){
+
+      this.navCtrl.push(BlogFactory.getPageFromUserType(userType), {key: refId});
+    }
   }
 
   /* FEED MANAGER METHODS */

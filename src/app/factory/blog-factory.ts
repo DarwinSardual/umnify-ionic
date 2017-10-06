@@ -36,11 +36,11 @@ export class BlogFactory{
 
       case AuthenticationCodes.SUPER_ADMIN:
       case AuthenticationCodes.ADMIN:
-        page = BlogAdminPage;
+        page = 'BlogAdminPage';
         break;
       case AuthenticationCodes. NORMAL:
       case AuthenticationCodes.GUEST:
-        page = BlogGuestPage;
+        page = 'BlogGuestPage';
         break;
       default:
         page = null;

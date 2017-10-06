@@ -29,6 +29,10 @@ export class Notification{
     return this._id;
   }
 
+  get refId(){
+    return this._refId;
+  }
+
   get type(): string{
     return this._type;
   }
