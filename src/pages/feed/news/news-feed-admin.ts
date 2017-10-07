@@ -16,8 +16,10 @@ export class NewsFeedAdminPage extends NewsFeedGuestPage{
   constructor(navCtrl: NavController, postDataService: PostDataService, private auth: AuthenticationService){
     super(navCtrl, postDataService);
 
-
   }
 
+  addNews(){
 
+    this.navCtrl.push('AddNewsPage');
+  }
 }

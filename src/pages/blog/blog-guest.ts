@@ -34,7 +34,6 @@ export class BlogGuestPage {
 
       let array: any = res['data'];
       let data: any = array.pop();
-      console.log(data.id);
       this.blog = new Blog(data.id, data.heading, data.content, data.image, data.author, data.created_date,
         data.published_date, data.signature, data.firstname, data.lastname, data.author_image);
     });

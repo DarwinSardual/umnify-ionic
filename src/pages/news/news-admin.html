@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="create"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="null">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-content>
+      {{this.news?.content}}
+    </ion-card-content>
+    <img src="{{this.getImageFolder()}}/preview/{{this.news?.imageFile}}">
+  </ion-card>
+</ion-content>

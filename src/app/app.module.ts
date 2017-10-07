@@ -5,9 +5,9 @@ import { MyApp } from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FilePath } from '@ionic-native/file-path';
 
 
 @NgModule({
@@ -27,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    FilePath,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

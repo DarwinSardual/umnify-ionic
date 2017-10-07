@@ -8,6 +8,7 @@ import {FeedAction} from "../feedaction";
 import {AuthenticationKeys} from "../../../app/constants/authenticationkeys";
 import {AuthenticationService} from "../../../app/providers/authenticationservice";
 import {BlogFactory} from "../../../app/factory/blog-factory";
+import {NewsFactory} from "../../../app/factory/news-factory";
 
 @IonicPage()
 @Component({
@@ -100,6 +101,9 @@ export class NotificationFeedPage {
     if(notification.type === 'blog'){
 
       this.navCtrl.push(BlogFactory.getPageFromUserType(userType), {key: refId});
+    }else if(notification.type === 'news'){
+
+      this.navCtrl.push(NewsFactory.getPageFromUserType(userType), {key: refId});
     }
   }
 

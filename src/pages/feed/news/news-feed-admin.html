@@ -31,7 +31,7 @@
     </ion-card-content>
     <img src="{{ this.imageFolder + '/preview/' + this.cache.get(key).imageFile}}">
   </ion-card>
-  <ion-fab right bottom>
+  <ion-fab right bottom (click)="addNews()">
     <button ion-fab color="secondary"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
